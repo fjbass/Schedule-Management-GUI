@@ -19,7 +19,7 @@ public class ScheduleManagementApplication extends Application {
     }
 
     public static void main(String[] args) {
-        new DataReader().readDataFromFile("src/main/resources/domain/rooms.txt");
+        new DataReader().readDataFromFile("src/main/resources/domain/students.txt");
         launch();
     }
 }
