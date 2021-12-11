@@ -1,16 +1,17 @@
-package com.example.demo1;
+package app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import utils.DataReader;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class ScheduleManagementApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ScheduleManagementApplication.class.getResource("schedule-management.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 604);
         stage.setTitle("Schedule Management");
         stage.setScene(scene);
@@ -18,6 +19,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        new DataReader().readDataFromFile("src/main/resources/domain/rooms.txt");
         launch();
     }
 }
