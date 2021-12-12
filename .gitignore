@@ -6,3 +6,5 @@ target/
 students.bin
 /target
 /sonarlint
+target/classes/
+target/classes
