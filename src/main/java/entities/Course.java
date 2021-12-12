@@ -1,8 +1,12 @@
 package entities;
 
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Course {
     private int semester;
-    private char className;
+    private String className;
     private String name;
     private String teacherIdentifier;
     private int credits;
@@ -10,7 +14,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(int semester, char className, String name, String teacherIdentifier, int credits) {
+    public Course(int semester, String className, String name, String teacherIdentifier, int credits) {
         this.semester = semester;
         this.className = className;
         this.name = name;
@@ -26,11 +30,11 @@ public class Course {
         this.semester = semester;
     }
 
-    public char getClassName() {
+    public String getClassName() {
         return className;
     }
 
-    public void setClassName(char className) {
+    public void setClassName(String className) {
         this.className = className;
     }
 
