@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import utils.DataReader;
 
 import java.io.IOException;
 
@@ -19,7 +18,6 @@ public class ScheduleManagementApplication extends Application {
     }
 
     public static void main(String[] args) {
-        new DataReader().readDataFromFile("src/main/resources/domain/rooms.txt");
         launch();
     }
 }
