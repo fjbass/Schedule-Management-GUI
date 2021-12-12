@@ -3,7 +3,7 @@ package entities;
 public class Student {
     private int semester;
     private String className;
-    private int studentIdentifier;
+    private int studentNumber;
     private String name;
 
     public Student() {
@@ -12,7 +12,7 @@ public class Student {
     public Student(int semester, String className, int studentIdentifier, String name) {
         this.semester = semester;
         this.className = className;
-        this.studentIdentifier = studentIdentifier;
+        this.studentNumber = studentIdentifier;
         this.name = name;
     }
 
@@ -33,11 +33,11 @@ public class Student {
     }
 
     public int getStudentIdentifier() {
-        return studentIdentifier;
+        return studentNumber;
     }
 
     public void setStudentIdentifier(int studentIdentifier) {
-        this.studentIdentifier = studentIdentifier;
+        this.studentNumber = studentIdentifier;
     }
 
     public String getName() {
