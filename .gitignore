@@ -3,3 +3,6 @@
 /sonarlint/
 target/
 /encodings.xml
+students.bin
+/target
+/sonarlint
