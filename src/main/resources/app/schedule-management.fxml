@@ -142,10 +142,10 @@
                                     </TableView>
                         <MenuButton layoutX="678.0" layoutY="5.0" mnemonicParsing="false" text="Filter by name">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="SDJ" />
-                            <MenuItem mnemonicParsing="false" text="SEP" />
-                              <MenuItem mnemonicParsing="false" text="DMA" />
-                              <MenuItem mnemonicParsing="false" text="RWD" />
+                            <MenuItem id="sdj" mnemonicParsing="false" text="SDJ" />
+                            <MenuItem id="sep" mnemonicParsing="false" text="SEP" />
+                              <MenuItem id="dma" mnemonicParsing="false" text="DMA" />
+                              <MenuItem id="rwd" mnemonicParsing="false" text="RWD" />
                           </items>
                         </MenuButton>
                             </children>
