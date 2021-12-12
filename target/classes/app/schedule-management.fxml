@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller">
     <children>
         <MenuBar prefHeight="25.0" prefWidth="800.0">
             <menus>
@@ -153,15 +153,15 @@
                                                         <MenuItem mnemonicParsing="false" text="by teacher" />
                                                     </items>
                                                 </MenuButton>
-                                    <TableView fx:id="tableView" layoutX="6.0" layoutY="37.0" prefHeight="250.0" prefWidth="773.0">
-                                      <columns>
-                                        <TableColumn fx:id="nameColumn" prefWidth="154.6" text="Name" />
-                                        <TableColumn fx:id="teacherColumn" prefWidth="154.6" text="Teacher" />
-                                          <TableColumn fx:id="semesterColumn" prefWidth="154.6" text="Semester" />
-                                          <TableColumn fx:id="classColumn" prefWidth="154.6" text="Class" />
-                                          <TableColumn fx:id="ectsColumn" prefWidth="154.6" text="ECTS" />
-                                      </columns>
-                                    </TableView>
+                                                <TableView fx:id="tableView" layoutX="6.0" layoutY="37.0" prefHeight="250.0" prefWidth="773.0">
+                                                    <columns>
+                                                        <TableColumn id="name" fx:id="nameColumn" prefWidth="154.6" text="Name" />
+                                                        <TableColumn id="teacherIdentifier" fx:id="teacherColumn" prefWidth="154.6" text="Teacher" />
+                                                        <TableColumn id="semester" fx:id="semesterColumn" prefWidth="154.6" text="Semester" />
+                                                        <TableColumn id="className" fx:id="classColumn" prefWidth="154.6" text="Class" />
+                                                        <TableColumn id="credits" fx:id="ectsColumn" prefWidth="154.6" text="ECTS" />
+                                                    </columns>
+                                                </TableView>
                                             </children>
                                         </AnchorPane>
                                     </content>
@@ -188,14 +188,14 @@
                                                         <MenuItem mnemonicParsing="false" text="by teacher" />
                                                     </items>
                                                 </MenuButton>
-                                    <TableView layoutX="6.0" layoutY="37.0" prefHeight="250.0" prefWidth="773.0">
-                                      <columns>
-                                        <TableColumn prefWidth="193.25" text="Block" />
-                                        <TableColumn prefWidth="193.25" text="Floor" />
-                                          <TableColumn prefWidth="193.25" text="Room" />
-                                          <TableColumn prefWidth="193.25" text="Capacity" />
-                                      </columns>
-                                    </TableView>
+                                                <TableView layoutX="6.0" layoutY="37.0" prefHeight="250.0" prefWidth="773.0">
+                                                    <columns>
+                                                        <TableColumn prefWidth="193.25" text="Block" />
+                                                        <TableColumn prefWidth="193.25" text="Floor" />
+                                                        <TableColumn prefWidth="193.25" text="Room" />
+                                                        <TableColumn prefWidth="193.25" text="Capacity" />
+                                                    </columns>
+                                                </TableView>
                                             </children>
                                         </AnchorPane>
                                     </content>
@@ -215,14 +215,14 @@
                                                 <Button layoutX="5.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Add" />
                                                 <Button layoutX="78.5" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Edit" />
                                                 <Button layoutX="152.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Remove" />
-                                    <TableView layoutX="6.0" layoutY="37.0" prefHeight="250.0" prefWidth="773.0">
-                                      <columns>
-                                        <TableColumn prefWidth="193.25" text="Name" />
-                                        <TableColumn prefWidth="193.25" text="Student Number" />
-                                          <TableColumn prefWidth="193.25" text="Semester" />
-                                          <TableColumn prefWidth="193.25" text="Class" />
-                                      </columns>
-                                    </TableView>
+                                                <TableView layoutX="6.0" layoutY="37.0" prefHeight="250.0" prefWidth="773.0">
+                                                    <columns>
+                                                        <TableColumn prefWidth="193.25" text="Name" />
+                                                        <TableColumn prefWidth="193.25" text="Student Number" />
+                                                        <TableColumn prefWidth="193.25" text="Semester" />
+                                                        <TableColumn prefWidth="193.25" text="Class" />
+                                                    </columns>
+                                                </TableView>
                                             </children>
                                         </AnchorPane>
                                     </content>

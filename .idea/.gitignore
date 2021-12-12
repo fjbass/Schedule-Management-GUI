@@ -2,5 +2,6 @@
 /shelf/
 /workspace.xml
 /sonarlint/
-/target/
+target/
 /encodings.xml
+
