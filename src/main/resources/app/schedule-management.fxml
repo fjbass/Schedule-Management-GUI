@@ -179,12 +179,12 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="800.0">
                             <children>
-                                    <TableView layoutX="14.0" layoutY="14.0" prefHeight="350.0" prefWidth="773.0">
+                                    <TableView fx:id="studentsTable" layoutX="14.0" layoutY="14.0" prefHeight="350.0" prefWidth="773.0">
                                         <columns>
-                                            <TableColumn prefWidth="193.25" text="Name" />
-                                            <TableColumn prefWidth="193.25" text="Student Number" />
-                                            <TableColumn prefWidth="193.25" text="Semester" />
-                                            <TableColumn prefWidth="193.25" text="Class" />
+                                            <TableColumn id="name" fx:id="studentNameCol" prefWidth="193.25" text="Name" />
+                                            <TableColumn id="studentNumber" fx:id="studentNumberCol" prefWidth="193.25" text="Student Number" />
+                                            <TableColumn id="semester" fx:id="studentSemesterCol" prefWidth="193.25" text="Semester" />
+                                            <TableColumn id="className" fx:id="studentClassCol" prefWidth="193.25" text="Class" />
                                         </columns>
                                     </TableView>
                         <Button layoutX="14.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Add student" />

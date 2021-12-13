@@ -1,6 +1,7 @@
 package app;
 
 import entities.Course;
+import entities.Student;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,16 +9,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import utils.DataReader;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-
+//Course
     @FXML
     private TableView<Course> tableView;
     @FXML
@@ -30,6 +29,17 @@ public class Controller implements Initializable {
     private TableColumn<Course, String> classColumn;
     @FXML
     private TableColumn<Course, Integer> ectsColumn;
+//Student
+    @FXML
+    private TableView<Student> studentsTable;
+    @FXML
+    private TableColumn<Student, String> studentNameCol;
+    @FXML
+    private TableColumn<Student, Integer> studentNumberCol;
+    @FXML
+    private TableColumn<Student, Integer> studentSemesterCol;
+    @FXML
+    private TableColumn<Student, String> studentClassCol;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -40,6 +50,13 @@ public class Controller implements Initializable {
         ectsColumn.setCellValueFactory(new PropertyValueFactory<>("credits"));
 
         tableView.setItems(getCourses());
+
+        studentNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        studentNumberCol.setCellValueFactory(new PropertyValueFactory<>("studentNumber"));
+        studentSemesterCol.setCellValueFactory(new PropertyValueFactory<>("semester"));
+        studentClassCol.setCellValueFactory(new PropertyValueFactory<>("className"));
+
+        studentsTable.setItems(getStudents());
 
 //        nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
 
@@ -53,6 +70,17 @@ public class Controller implements Initializable {
 
         return courses;
     }
+
+    public ObservableList<Student> getStudents() {
+        ArrayList<String[]>  studentArray = new DataReader().readDataFromFile("src/main/resources/domain/students.txt");
+        ObservableList<Student> students = FXCollections.observableArrayList();
+
+        studentArray.forEach(n -> students.add(new Student(Integer.parseInt(n[0]),n[1], Integer.parseInt(n[2]),n[3])));
+
+        return students;
+    }
+
+
 
 }
 
