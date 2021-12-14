@@ -156,12 +156,12 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                    <TableView layoutX="14.0" layoutY="35.0" prefHeight="410.0" prefWidth="773.0">
+                                    <TableView fx:id="roomsTable" layoutX="14.0" layoutY="35.0" prefHeight="410.0" prefWidth="773.0">
                                         <columns>
-                                            <TableColumn prefWidth="193.25" text="Block" />
-                                            <TableColumn prefWidth="193.25" text="Floor" />
-                                            <TableColumn prefWidth="193.25" text="Room" />
-                                            <TableColumn prefWidth="193.25" text="Capacity" />
+                                            <TableColumn id="block" fx:id="blockColumn" prefWidth="193.25" text="Block" />
+                                            <TableColumn id="floor" fx:id="floorColumn" prefWidth="193.25" text="Floor" />
+                                            <TableColumn id="room" fx:id="roomColumn" prefWidth="193.25" text="Room" />
+                                            <TableColumn id="capacity" fx:id="capacityColumn" prefWidth="193.25" text="Capacity" />
                                         </columns>
                                     </TableView>
                         <MenuButton layoutX="665.0" layoutY="5.0" mnemonicParsing="false" text="Filter by capacity">
