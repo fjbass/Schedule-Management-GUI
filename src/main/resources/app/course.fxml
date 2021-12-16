@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app.CourseController"
+            prefHeight="400.0" prefWidth="600.0">
+    <TableView fx:id="tableView" layoutX="14.0" layoutY="35.0" prefHeight="410.0" prefWidth="773.0">
+        <columns>
+            <TableColumn id="name" fx:id="nameColumn" prefWidth="154.6" text="Name"/>
+            <TableColumn id="teacherIdentifier" fx:id="teacherColumn" prefWidth="154.6" text="Teacher"/>
+            <TableColumn id="semester" fx:id="semesterColumn" prefWidth="154.6" text="Semester"/>
+            <TableColumn id="className" fx:id="classColumn" prefWidth="154.6" text="Class"/>
+            <TableColumn id="credits" fx:id="ectsColumn" prefWidth="154.6" text="ECTS"/>
+        </columns>
+    </TableView>
+    <MenuButton layoutX="678.0" layoutY="5.0" mnemonicParsing="false" text="Filter by name">
+        <items>
+            <MenuItem mnemonicParsing="false" text="SDJ"/>
+            <MenuItem mnemonicParsing="false" text="SEP"/>
+            <MenuItem mnemonicParsing="false" text="DMA"/>
+            <MenuItem mnemonicParsing="false" text="RWD"/>
+        </items>
+    </MenuButton>
+</AnchorPane>

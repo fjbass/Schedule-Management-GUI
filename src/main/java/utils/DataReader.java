@@ -3,9 +3,10 @@ package utils;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DataReader {
-    public ArrayList<String[]> readDataFromFile(String filename) {
+    public List<String[]> readDataFromFile(String filename) {
         ArrayList<String[]> arrayList = new ArrayList<>();
 
         try {
