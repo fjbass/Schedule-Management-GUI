@@ -1,6 +1,7 @@
 package app.controllers;
 
-import entities.Student;
+import app.entities.Student;
+import app.utils.DataReader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import utils.DataReader;
 
 import java.net.URL;
 import java.util.List;
