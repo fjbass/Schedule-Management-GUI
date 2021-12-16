@@ -1,4 +1,4 @@
-package app;
+package app.controllers;
 
 import entities.Room;
 import javafx.collections.FXCollections;
@@ -37,9 +37,9 @@ public class RoomController implements Initializable {
     }
 
     public ObservableList<Room> getRooms() {
-        List<String[]> roomArray = new DataReader().readDataFromFile("src/main/resources/domain/rooms.txt");
         ObservableList<Room> rooms = FXCollections.observableArrayList();
 
+        List<String[]> roomArray = new DataReader().readDataFromFile("src/main/resources/domain/rooms.txt");
         roomArray.forEach(y -> rooms.add(new Room(y[0].substring(0, 1), y[0].split("\\.")[0].substring(1), y[0].split("\\.")[1], Integer.parseInt(y[1]))));
         return rooms;
     }

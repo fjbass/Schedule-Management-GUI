@@ -1,7 +1,6 @@
 package entities;
 
 public class Room {
-  //private String location;
     private String block;
     private String floor;
     private String roomNumber;
@@ -15,46 +14,31 @@ public class Room {
         this.floor = floor;
         this.roomNumber = roomNumber;
         this.capacity = capacity;
-        //this.location = location
     }
 
-    public String getBlock()
-    {
+    public String getBlock() {
         return block;
     }
 
-    public void setBlock(String block)
-    {
+    public void setBlock(String block) {
         this.block = block;
     }
 
-    public String getFloor()
-    {
+    public String getFloor() {
         return floor;
     }
 
-    public void setFloor(String floor)
-    {
+    public void setFloor(String floor) {
         this.floor = floor;
     }
 
-    public String getRoomNumber()
-    {
+    public String getRoomNumber() {
         return roomNumber;
     }
 
-    public void setRoomNumber(String roomNumber)
-    {
+    public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
     }
-
-    /*public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }*/
 
     public int getCapacity() {
         return capacity;

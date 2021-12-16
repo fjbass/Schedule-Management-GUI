@@ -42,8 +42,8 @@ public class FileHandler {
             FileOutputStream fileOutStream = new FileOutputStream(fileName, append);
             writeToFile = new PrintWriter(fileOutStream);
 
-            for (int i = 0; i < strs.length; i++) {
-                writeToFile.println(strs[i]);
+            for (String str : strs) {
+                writeToFile.println(str);
             }
         } finally {
             if (writeToFile != null) {
@@ -115,8 +115,8 @@ public class FileHandler {
             FileOutputStream fileOutStream = new FileOutputStream(fileName);
             writeToFile = new ObjectOutputStream(fileOutStream);
 
-            for (int i = 0; i < objs.length; i++) {
-                writeToFile.writeObject(objs[i]);
+            for (Object obj : objs) {
+                writeToFile.writeObject(obj);
             }
         } finally {
             if (writeToFile != null) {
@@ -154,7 +154,7 @@ public class FileHandler {
     }
 
     public static Object[] readArrayFromBinaryFile(String fileName) throws IOException, ClassNotFoundException {
-        ArrayList<Object> objs = new ArrayList<Object>();
+        ArrayList<Object> objs = new ArrayList<>();
 
         ObjectInputStream readFromFile = null;
         try {

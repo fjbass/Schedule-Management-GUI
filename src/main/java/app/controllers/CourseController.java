@@ -1,4 +1,4 @@
-package app;
+package app.controllers;
 
 import entities.Course;
 import javafx.collections.FXCollections;
@@ -40,11 +40,10 @@ public class CourseController implements Initializable {
     }
 
     public ObservableList<Course> getCourses() {
-        List<String[]> arrayList = new DataReader().readDataFromFile("src/main/resources/domain/courses.txt");
         ObservableList<Course> courses = FXCollections.observableArrayList();
 
+        List<String[]> arrayList = new DataReader().readDataFromFile("src/main/resources/domain/courses.txt");
         arrayList.forEach(z -> courses.add(new Course(Integer.parseInt(z[0]), z[1], z[2], z[3], Integer.parseInt(z[4]))));
-
         return courses;
     }
 }

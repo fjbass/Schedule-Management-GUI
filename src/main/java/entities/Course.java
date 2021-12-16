@@ -1,9 +1,5 @@
 package entities;
 
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 public class Course {
     private int semester;
     private String className;

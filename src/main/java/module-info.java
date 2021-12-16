@@ -6,4 +6,6 @@ module app {
     exports app;
 
     opens entities to javafx.base;
+    exports app.controllers;
+    opens app.controllers to javafx.fxml;
 }
