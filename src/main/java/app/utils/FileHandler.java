@@ -42,19 +42,27 @@ public class FileHandler {
 
     public static void updateDataFromFile(String oldString, String newString, String path) {
         try {
-            List<String> fileContent = new ArrayList<>(Files.readAllLines(Path.of(path), StandardCharsets.UTF_8));
-            for (int i = 0; i < fileContent.size(); i++) {
-                if (fileContent.get(i).equals(oldString)) {
-                    fileContent.set(i, newString);
-                    break;
+            List<String> fileContent = new ArrayList<>(Files.readAllLines(Path.of(path), StandardCharsets.UTF_8));     //takes 1
+            for (int i = 0; i < fileContent.size(); i++) {     //takes n to go through the size of file
+                if (fileContent.get(i).equals(oldString)) {     //takes log(n) to take each element in the array and compare it
+                    fileContent.set(i, newString);    //takes 1
+                    break;    //takes 1
                 }
             }
 
-            Files.write(Path.of(path), fileContent, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            e.printStackTrace();
+            Files.write(Path.of(path), fileContent, StandardCharsets.UTF_8);    //takes 1
+        } catch (IOException e) {    //takes 1
+            e.printStackTrace();    //takes 1
         }
     }
+
+    // There is no recursion so we don't need a best case;
+    // We loop n time through the file;
+    // We execute log(n) to compare each element in the array while looping;
+    // T(n) = 1 + n + log(n) + 1 + 1 + 1 + 1 + 1 + 1 = 7 + n + log(n);
+    // By using Master Theorem, ignoring the constants and coeficients, we get T(n) = n+log(n);
+    // We chose this method in order to be able to change data from the text file with the new one coming from the gui editing features.
+
 
     public static void deleteSelectedDataFromFile(Student selectedStudent, String path) {
         File inputFile = new File(path);
