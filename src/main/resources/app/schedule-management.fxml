@@ -36,9 +36,7 @@
         <Tab text="Schedule">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                 <Pane prefHeight="550.0" prefWidth="800.0">
-                    <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Add" />
-                    <Button layoutX="87.5" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Edit" />
-                    <Button layoutX="161.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Remove" />
+                    <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Add " />
                     <MenuButton layoutX="681.0" layoutY="5.0" mnemonicParsing="false" text="Filter by week">
                         <items>
                             <MenuItem mnemonicParsing="false" text="week 34" />
@@ -67,7 +65,7 @@
                             <MenuItem mnemonicParsing="false" text="week 05" />
                         </items>
                     </MenuButton>
-                    <GridPane gridLinesVisible="true" layoutX="9.0" layoutY="30.0" prefHeight="520.0" prefWidth="783.0">
+                    <GridPane gridLinesVisible="true" layoutX="31.0" layoutY="86.0" prefHeight="439.0" prefWidth="738.0">
                         <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -107,6 +105,36 @@
                         <Label alignment="CENTER" prefHeight="90.0" prefWidth="326.0" style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label alignment="CENTER" prefHeight="90.0" prefWidth="326.0" style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                     </GridPane>
+               <MenuButton layoutX="130.0" layoutY="36.0" mnemonicParsing="false" text="Slelect course">
+                 <items>
+                   <MenuItem mnemonicParsing="false" text="Action 1" />
+                   <MenuItem mnemonicParsing="false" text="Action 2" />
+                 </items>
+               </MenuButton>
+               <MenuButton layoutX="476.0" layoutY="36.0" mnemonicParsing="false" text="Select day">
+                  <items>
+                     <MenuItem mnemonicParsing="false" text="Action 1" />
+                     <MenuItem mnemonicParsing="false" text="Action 2" />
+                  </items>
+               </MenuButton>
+               <MenuButton layoutX="577.0" layoutY="36.0" mnemonicParsing="false" text="Select time slot">
+                  <items>
+                     <MenuItem mnemonicParsing="false" text="Action 1" />
+                     <MenuItem mnemonicParsing="false" text="Action 2" />
+                  </items>
+               </MenuButton>
+               <MenuButton layoutX="366.0" layoutY="36.0" mnemonicParsing="false" text="Select week">
+                  <items>
+                     <MenuItem mnemonicParsing="false" text="Action 1" />
+                     <MenuItem mnemonicParsing="false" text="Action 2" />
+                  </items>
+               </MenuButton>
+               <MenuButton layoutX="245.0" layoutY="36.0" mnemonicParsing="false" text="Select room">
+                  <items>
+                     <MenuItem mnemonicParsing="false" text="Action 1" />
+                     <MenuItem mnemonicParsing="false" text="Action 2" />
+                  </items>
+               </MenuButton>
                 </Pane>
             </AnchorPane>
         </Tab>
