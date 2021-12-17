@@ -1,7 +1,5 @@
 package app.utils;
 
-import app.entities.Student;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -64,12 +62,12 @@ public class FileHandler {
     // We chose this method in order to be able to change data from the text file with the new one coming from the gui editing features.
 
 
-    public static void deleteSelectedDataFromFile(Student selectedStudent, String path) {
+    public static void deleteSelectedDataFromFile(Object selectedObject, String path) {
         File inputFile = new File(path);
         File tempFile = new File("src/main/resources/domain/myTempFile.txt");
 
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile)); BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
-            String lineToRemove = selectedStudent.toString();
+            String lineToRemove = selectedObject.toString();
             String currentLine;
 
             while ((currentLine = reader.readLine()) != null) {

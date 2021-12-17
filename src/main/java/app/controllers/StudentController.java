@@ -11,7 +11,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.util.converter.IntegerStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -57,7 +56,6 @@ public class StudentController implements Initializable {
         studentsView.setItems(getStudents());
 
         studentsView.setEditable(true);
-        studentSemesterCol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         studentClassCol.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
@@ -71,12 +69,12 @@ public class StudentController implements Initializable {
 
     @FXML
     public void changeClassNameCellEvent(TableColumn.CellEditEvent<Student, String> studentStringCellEditEvent) {
-        Student personSelected = studentsView.getSelectionModel().getSelectedItem();
-        String selectedStudentString = new Student(personSelected.getSemester(), studentStringCellEditEvent.getOldValue(), personSelected.getStudentNumber(), personSelected.getName()).toString();
-        String updatedStudentString = new Student(personSelected.getSemester(), studentStringCellEditEvent.getNewValue(), personSelected.getStudentNumber(), personSelected.getName()).toString();
+        Student selectedStudent = studentsView.getSelectionModel().getSelectedItem();
+        String selectedStudentString = new Student(selectedStudent.getSemester(), studentStringCellEditEvent.getOldValue(), selectedStudent.getStudentNumber(), selectedStudent.getName()).toString();
+        String updatedStudentString = new Student(selectedStudent.getSemester(), studentStringCellEditEvent.getNewValue(), selectedStudent.getStudentNumber(), selectedStudent.getName()).toString();
         FileHandler.updateDataFromFile(selectedStudentString, updatedStudentString, STUDENT_PATH);
 
-        personSelected.setClassName(studentStringCellEditEvent.getNewValue());//update it visually
+        selectedStudent.setClassName(studentStringCellEditEvent.getNewValue());
     }
 
     @FXML
@@ -99,9 +97,9 @@ public class StudentController implements Initializable {
                 : studentsView.getSelectionModel().getSelectedItem().getStudentNumber();
 
         ObservableList<Student> studentList = studentsView.getItems();
-        Student selectedStudent = studentList.stream().filter(e -> e.getStudentNumber() == studentNumber).findFirst().orElse(null);
-        FileHandler.deleteSelectedDataFromFile(Objects.requireNonNull(selectedStudent), STUDENT_PATH);
+        Student selectedStudentByNumber = studentList.stream().filter(e -> e.getStudentNumber() == studentNumber).findFirst().orElse(null);
+        FileHandler.deleteSelectedDataFromFile(Objects.requireNonNull(selectedStudentByNumber), STUDENT_PATH);
 
-        studentList.removeIf(student -> student.getStudentNumber() == studentNumber);
+        studentList.remove(selectedStudentByNumber);
     }
 }
