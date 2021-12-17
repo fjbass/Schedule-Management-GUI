@@ -1,7 +1,7 @@
 package app.controllers;
 
 import app.entities.Course;
-import app.utils.DataReader;
+import app.utils.FileHandler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -42,7 +42,7 @@ public class CourseController implements Initializable {
     public ObservableList<Course> getCourses() {
         ObservableList<Course> courses = FXCollections.observableArrayList();
 
-        List<String[]> arrayList = new DataReader().readDataFromFile("src/main/resources/domain/courses.txt");
+        List<String[]> arrayList = FileHandler.readDataFromFile("src/main/resources/domain/courses.txt");
         arrayList.forEach(z -> courses.add(new Course(Integer.parseInt(z[0]), z[1], z[2], z[3], Integer.parseInt(z[4]))));
         return courses;
     }

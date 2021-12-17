@@ -45,5 +45,9 @@ public class Student {
     public void setClassName(String className) {
         this.className = className;
     }
+
+    public String toString() {
+        return semester + "," + className + "," + studentNumber + "," + name;
+    }
 }
 
