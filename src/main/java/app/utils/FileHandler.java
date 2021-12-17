@@ -10,20 +10,25 @@ import java.util.Scanner;
 
 public class FileHandler {
     public static List<String[]> readDataFromFile(String filename) {
-        ArrayList<String[]> arrayList = new ArrayList<>();
+        ArrayList<String[]> arrayList = new ArrayList<>(); //takes 1
 
         try {
-            String[] fileArray = FileHandler.readArrayFromTextFile(filename);
+            String[] fileArray = FileHandler.readArrayFromTextFile(filename); //takes 1
 
-            for (String temp : fileArray) {
-                String[] array = temp.split(",");
-                arrayList.add(array);
+            for (String temp : fileArray) { //takes n time to loop throught the file
+                String[] array = temp.split(","); //takes 1
+                arrayList.add(array); //takes 1
             }
         } catch (FileNotFoundException e) {
-            System.out.println("File was not found, or could not be opened");
+            System.out.println("File was not found, or could not be opened"); //takes 1
         }
-        return arrayList;
+        return arrayList; //takes 1
     }
+
+    //There is no recursive method, so we don't have a best case;
+    //We loop n times through the file until we find the regex "," every time;
+    //T(n) = 1 + 1 + n + 1 + 1 + 1 = 5 + n;
+    //We use the Master Theorem, ignore the coefficients and constants and get T(n) = n.
 
     public static String[] readArrayFromTextFile(String fileName) throws FileNotFoundException {
         ArrayList<String> stringArrayList = new ArrayList<>();

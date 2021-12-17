@@ -1,117 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0"
-      prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="app.controllers.MainController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.MainController">
     <MenuBar prefHeight="25.0" prefWidth="800.0">
         <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" text="New"/>
-            <MenuItem mnemonicParsing="false" text="Open"/>
-            <MenuItem mnemonicParsing="false" text="Save"/>
-            <MenuItem mnemonicParsing="false" text="Export"/>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Export" />
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
-            <MenuItem mnemonicParsing="false" text="Add"/>
-            <MenuItem mnemonicParsing="false" text="Delete"/>
+            <MenuItem mnemonicParsing="false" text="Add" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
-            <MenuItem mnemonicParsing="false" text="About"/>
+            <MenuItem mnemonicParsing="false" text="About" />
         </Menu>
     </MenuBar>
     <TabPane layoutY="25.0" prefHeight="577.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
         <Tab text="Schedule">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                 <Pane prefHeight="550.0" prefWidth="800.0">
-                    <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0"
-                            text="Add "/>
+                    <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Add " />
                     <MenuButton layoutX="681.0" layoutY="5.0" mnemonicParsing="false" text="Filter by week">
                         <items>
-                            <MenuItem mnemonicParsing="false" text="week 34"/>
-                            <MenuItem mnemonicParsing="false" text="week 35"/>
-                            <MenuItem mnemonicParsing="false" text="week 36"/>
+                            <MenuItem mnemonicParsing="false" text="week 34" />
+                            <MenuItem mnemonicParsing="false" text="week 35" />
+                            <MenuItem mnemonicParsing="false" text="week 36" />
                         </items>
                     </MenuButton>
-                    <GridPane gridLinesVisible="true" layoutX="31.0" layoutY="86.0" prefHeight="439.0"
-                              prefWidth="738.0">
-                        <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0"/>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                        </columnConstraints>
-                        <rowConstraints>
-                            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        </rowConstraints>
-                        <padding>
-                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                        </padding>
-                        <Label alignment="CENTER" prefHeight="48.0" prefWidth="120.0" style="-fx-font-weight: bold;">
-                            <font>
-                                <Font size="18.0"/>
-                            </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="48.0" prefWidth="326.0" style="-fx-font-weight: bold;"
-                               text="08:20 - 11:50" GridPane.columnIndex="1"/>
-                        <Label alignment="CENTER" prefHeight="48.0" prefWidth="326.0" style="-fx-font-weight: bold;"
-                               text="12:45 - 16:05" GridPane.columnIndex="2"/>
-                        <Label alignment="CENTER" prefHeight="90.0" prefWidth="120.0" style="-fx-font-weight: bold;"
-                               text="Monday" GridPane.rowIndex="1"/>
-                        <Label alignment="CENTER" prefHeight="90.0" prefWidth="120.0" style="-fx-font-weight: bold;"
-                               text="Friday" GridPane.rowIndex="5"/>
-                        <Label alignment="CENTER" prefHeight="90.0" prefWidth="120.0" style="-fx-font-weight: bold;"
-                               text="Thursday" GridPane.rowIndex="4"/>
-                        <Label alignment="CENTER" prefHeight="90.0" prefWidth="120.0" style="-fx-font-weight: bold;"
-                               text="Wednesday" GridPane.rowIndex="3"/>
-                        <Label alignment="CENTER" prefHeight="90.0" prefWidth="120.0" style="-fx-font-weight: bold;"
-                               text="Tuesday" GridPane.rowIndex="2"/>
-                        <Label fx:id="tuesdayMorningLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                        <Label fx:id="fridayMiddayLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
-                        <Label fx:id="thursdayMiddayLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-                        <Label fx:id="wednesdayMiddayLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
-                        <Label fx:id="tuesdayMiddayLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                        <Label fx:id="mondayMiddayLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                        <Label fx:id="fridayMorningLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
-                        <Label fx:id="thursdayMorningLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
-                        <Label fx:id="wednesdayMorningLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-                        <Label fx:id="mondayMorningLabel" alignment="CENTER" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                        <Label alignment="CENTER" layoutX="135.0" layoutY="66.0" prefHeight="90.0" prefWidth="326.0"
-                               style="-fx-font-weight: bold;"/>
-                    </GridPane>
-                    <ChoiceBox fx:id="choiceCourses" layoutX="106.0" layoutY="36.0" prefHeight="25.0"
-                               prefWidth="112.0"/>
-                    <ChoiceBox fx:id="choiceRooms" layoutX="250.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0"/>
-                    <ChoiceBox fx:id="choiceWeek" layoutX="393.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0"/>
-                    <ChoiceBox fx:id="choiceDay" layoutX="525.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0"/>
-                    <ChoiceBox fx:id="choiceHours" layoutX="657.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0"/>
+                    <ChoiceBox fx:id="choiceCourses" layoutX="106.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
+                    <ChoiceBox fx:id="choiceRooms" layoutX="250.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
+                    <ChoiceBox fx:id="choiceWeek" layoutX="393.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
+                    <ChoiceBox fx:id="choiceDay" layoutX="525.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
+                    <ChoiceBox fx:id="choiceHours" layoutX="657.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
+               <TableView layoutX="14.0" layoutY="75.0" prefHeight="444.0" prefWidth="771.0">
+                 <columns>
+                     <TableColumn prefWidth="154.2" text="Monday" />
+                     <TableColumn prefWidth="154.2" text="Tuesday" />
+                     <TableColumn prefWidth="154.2" text="Wednesday" />
+                     <TableColumn prefWidth="154.2" text="Thursday" />
+                     <TableColumn prefWidth="154.2" text="Friday" />
+                 </columns>
+               </TableView>
                 </Pane>
             </AnchorPane>
         </Tab>
         <Tab text="Course">
-            <fx:include fx:id="course" source="course.fxml"/>
+            <fx:include fx:id="course" source="course.fxml" />
         </Tab>
         <Tab text="Room">
-            <fx:include fx:id="room" source="room.fxml"/>
+            <fx:include fx:id="room" source="room.fxml" />
         </Tab>
         <Tab text="Student">
-            <fx:include fx:id="student" source="student.fxml"/>
+            <fx:include fx:id="student" source="student.fxml" />
         </Tab>
     </TabPane>
 </Pane>
