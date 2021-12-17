@@ -9,18 +9,27 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.IOException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
+    @FXML
+    TableColumn mondayColumn;
+    @FXML
+    TableColumn tuesdayColumn;
+    @FXML
+    TableColumn wednesdayColumn;
+    @FXML
+    TableColumn thursdayColumn;
+    @FXML
+    TableColumn fridayColumn;
+    @FXML
+    TableView<Schedule> scheduleView;
     @FXML
     ChoiceBox choiceCourses;
     @FXML
@@ -31,37 +40,31 @@ public class MainController implements Initializable {
     ChoiceBox choiceDay;
     @FXML
     ChoiceBox choiceHours;
-    @FXML
-    Label mondayMorningLabel;
-    @FXML
-    Label tuesdayMorningLabel;
-    @FXML
-    Label wednesdayMorningLabel;
-    @FXML
-    Label thursdayMorningLabel;
-    @FXML
-    Label fridayMorningLabel;
-
-    @FXML
-    Label mondayMiddayLabel;
-    @FXML
-    Label tuesdayMiddayLabel;
-    @FXML
-    Label wednesdayMiddayLabel;
-    @FXML
-    Label thursdayMiddayLabel;
-    @FXML
-    Label fridayMiddayLabel;
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        fridayMiddayLabel.setText("aaaa");
+        mondayColumn.setCellValueFactory(new PropertyValueFactory<>("mondaySchedule"));
+        tuesdayColumn.setCellValueFactory(new PropertyValueFactory<>("tuesdaySchedule"));
+        wednesdayColumn.setCellValueFactory(new PropertyValueFactory<>("wednesdaySchedule"));
+        thursdayColumn.setCellValueFactory(new PropertyValueFactory<>("thursdaySchedule"));
+        fridayColumn.setCellValueFactory(new PropertyValueFactory<>("fridaySchedule"));
+
         choiceCourses.getItems().addAll(getCourses());
         choiceRooms.getItems().addAll(getRooms());
-
         choiceWeek.getItems().addAll(List.of("Week 35", "Week 36", "Week 37"));
-        choiceDay.getItems().addAll(List.of("Monday", "Tuesday", "Wednesday", "Thurday", "Friday"));
+        choiceDay.getItems().addAll(List.of("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"));
         choiceHours.getItems().addAll(List.of("08:20 - 11:50", "12:45 - 16:05"));
+
+        choiceCourses.getSelectionModel().selectFirst();
+        choiceRooms.getSelectionModel().selectFirst();
+        choiceWeek.getSelectionModel().selectFirst();
+        choiceDay.getSelectionModel().selectFirst();
+        choiceHours.getSelectionModel().selectFirst();
+    }
+
+    @FXML
+    public void addNewSchedule() {
+        scheduleView.getItems().add(new Schedule());
     }
 
     public ObservableList<Course> getCourses() {

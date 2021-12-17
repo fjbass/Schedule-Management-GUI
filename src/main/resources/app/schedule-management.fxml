@@ -33,7 +33,7 @@
         <Tab text="Schedule">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                 <Pane prefHeight="550.0" prefWidth="800.0">
-                    <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Add " />
+                    <Button fx:id="addNewSchedule" layoutX="14.0" layoutY="36.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Add " />
                     <MenuButton layoutX="681.0" layoutY="5.0" mnemonicParsing="false" text="Filter by week">
                         <items>
                             <MenuItem mnemonicParsing="false" text="week 34" />
@@ -46,13 +46,13 @@
                     <ChoiceBox fx:id="choiceWeek" layoutX="393.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
                     <ChoiceBox fx:id="choiceDay" layoutX="525.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
                     <ChoiceBox fx:id="choiceHours" layoutX="657.0" layoutY="36.0" prefHeight="25.0" prefWidth="112.0" />
-               <TableView layoutX="14.0" layoutY="75.0" prefHeight="444.0" prefWidth="771.0">
+               <TableView fx:id="scheduleView" layoutX="14.0" layoutY="75.0" prefHeight="444.0" prefWidth="771.0">
                  <columns>
-                     <TableColumn prefWidth="154.2" text="Monday" />
-                     <TableColumn prefWidth="154.2" text="Tuesday" />
-                     <TableColumn prefWidth="154.2" text="Wednesday" />
-                     <TableColumn prefWidth="154.2" text="Thursday" />
-                     <TableColumn prefWidth="154.2" text="Friday" />
+                     <TableColumn fx:id="mondayColumn" prefWidth="154.2" text="Monday" />
+                     <TableColumn fx:id="tuesdayColumn" prefWidth="154.2" text="Tuesday" />
+                     <TableColumn fx:id="wednesdayColumn" prefWidth="154.2" text="Wednesday" />
+                     <TableColumn fx:id="thursdayColumn" prefWidth="154.2" text="Thursday" />
+                     <TableColumn fx:id="fridayColumn" prefWidth="154.2" text="Friday" />
                  </columns>
                </TableView>
                 </Pane>
