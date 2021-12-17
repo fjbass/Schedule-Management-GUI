@@ -1,6 +1,8 @@
 package app.entities;
 
-public class Course {
+import javafx.scene.control.MenuItem;
+
+public class Course extends MenuItem {
     private int semester;
     private String className;
     private String name;
