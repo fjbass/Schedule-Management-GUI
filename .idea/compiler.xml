@@ -9,8 +9,5 @@
         <module name="schedule-management-system" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="schedule-management-system" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
